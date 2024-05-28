@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+	--main-color: #222831;
+	--second-color: #d7dde7;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', 'Pretendard', sans-serif;
+	cursor: pointer;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+}
+
+.page {
+	flex: 1 1 auto;
+	margin-top: 56px;
+	text-align: center;
+	@media (min-width: 768px) {
+	}
+}
+
+// page 안에 있는 wrapper
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 5px;
+	h2 {
+		margin-top: 50px;
+		font-size: 5rem;
+	}
+
+	@media (min-width: 576px) {
+		padding: 15px;
+	}
+
+	@media (min-width: 990px) {
+		padding: 5px;
+	}
+}

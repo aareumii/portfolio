@@ -1,0 +1,35 @@
+.category_button,
+.active_category {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+
+	@media (min-width: 992px) {
+		margin-right: 20px;
+		margin-bottom: 20px;
+		margin-top: -1rem;
+		padding: 10px 10px;
+		font-weight: 500;
+		font-size: 17px;
+	}
+}
+
+.category_button::after,
+.active_category::after {
+	content: '';
+	width: 0%;
+	height: 2px;
+	margin: 0 auto;
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 0.625rem;
+	background: #000;
+	-webkit-transition: width 0.5s;
+	transition: width 0.5s;
+}
+
+.active_category::after,
+.category_button:hover::after {
+	width: 90%;
+}

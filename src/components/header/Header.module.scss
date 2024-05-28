@@ -1,0 +1,28 @@
+.header {
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	margin-bottom: 56px;
+	background-color: #fff;
+	transition: border-bottom 0.3s ease;
+
+	&.scrolled {
+		border-bottom: 1px solid #ddd;
+	}
+}
+
+.header_wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	padding: 5px;
+	align-items: center;
+	justify-content: space-between;
+
+	h2 {
+		font-weight: bold;
+		color: #000;
+	}
+}

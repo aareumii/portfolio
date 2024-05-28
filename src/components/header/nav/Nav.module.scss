@@ -1,0 +1,150 @@
+.nav {
+	max-width: 1200px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	z-index: 10;
+	position: relative;
+	transition: border-bottom 0.3s ease;
+}
+
+.scrolled {
+	border-bottom: 1px solid #ddd;
+}
+
+.menu {
+	width: 50%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease-out;
+
+	li {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transform: translateY(-100%);
+		transition: transform 0.5s ease-out;
+		margin: 0;
+		padding: 5px 0;
+
+		a {
+			font-size: 1rem;
+			color: #000;
+			position: relative;
+
+			&::after {
+				content: '';
+				width: 0%;
+				height: 1px;
+				margin: 0 auto;
+				position: absolute;
+				right: 0;
+				left: 0;
+				bottom: -5px;
+				background: #000;
+				-webkit-transition: width 0.5s;
+				transition: width 0.5s;
+			}
+
+			&:hover::after {
+				width: 100%;
+			}
+		}
+
+		&:hover a {
+			font-weight: bold;
+			cursor: pointer;
+			transition: 0.3s all ease;
+		}
+	}
+}
+
+.menuActive {
+	max-height: 500px;
+}
+
+.menuActive li {
+	transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+	.nav {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.menu {
+		flex-direction: row;
+	}
+
+	li {
+		font-size: 25px;
+		margin: 0 20px;
+	}
+
+	.menuActive {
+		display: flex;
+		justify-content: center;
+	}
+
+	.menuActive li {
+		transform: none;
+	}
+}
+
+.hamburger {
+	display: flex;
+	flex-direction: column;
+
+	justify-content: space-around;
+	width: 35px;
+	height: 25px;
+
+	font-weight: bold;
+
+	.bar {
+		height: 3px;
+		width: 100%;
+		background-color: #000;
+		transition: all 0.3s ease;
+		transform-origin: 1px;
+		&:nth-child(1) {
+			transform: translateY(5px);
+		}
+
+		&:nth-child(2) {
+			transform: translateY(0px);
+		}
+
+		&:nth-child(3) {
+			transform: translateY(10px);
+		}
+	}
+
+	&.active .bar:nth-child(1) {
+		transform: rotate(45deg);
+		position: relative;
+		top: 5px;
+	}
+
+	&.active .bar:nth-child(2) {
+		opacity: 0;
+	}
+
+	&.active .bar:nth-child(3) {
+		transform: rotate(-45deg); // 세 번째 바 회전
+		position: relative;
+		top: 12px;
+	}
+}
