@@ -1,5 +1,4 @@
 {
-	"homepage": "https://aareumii.github.io/portfolio/",
 	"name": "portfolio",
 	"private": true,
 	"version": "0.0.0",
@@ -36,5 +35,6 @@
 		"sass": "^1.77.1",
 		"typescript": "^5.2.2",
 		"vite": "^5.0.8"
-	}
+	},
+	"homepage": "https://aareumii.github.io/portfolio"
 }
